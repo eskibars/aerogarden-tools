@@ -161,9 +161,9 @@ class AerogardenAPI():
                 garden["pumpStat"] = (garden["pumpStat"] == 0)
             if "pumpCycle" in garden:
               m = re.match(r'([0-9a-f]{4})([0-9a-f]{4})', garden["pumpCycle"])
-                if m is not None:
-                  garden["pumpCycleTimeOn"] = self.convertHexToInteger(m.group(1))
-                  garden["pumpCycleTimeOff"] = self.convertHexToInteger(m.group(2))
+              if m is not None:
+                garden["pumpCycleTimeOn"] = self.convertHexToInteger(m.group(1))
+                garden["pumpCycleTimeOff"] = self.convertHexToInteger(m.group(2))
 
             gardenmac = garden["airGuid"]
             data[gardenmac] = garden
